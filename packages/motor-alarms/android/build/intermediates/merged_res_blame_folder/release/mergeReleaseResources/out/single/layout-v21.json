@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-v21/notification_action_tombstone.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-core-1.17.0-4:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-v21/notification_action.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-core-1.17.0-4:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-v21/notification_template_custom_big.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-core-1.17.0-4:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-v21/notification_template_icon_group.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-core-1.17.0-4:/layout-v21/notification_template_icon_group.xml"
+    }
+]

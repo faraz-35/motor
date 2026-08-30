@@ -1,0 +1,78 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:1:1-29:12
+INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:1:1-29:12
+	package
+		INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:3:3-77
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:3:20-74
+uses-permission#android.permission.USE_EXACT_ALARM
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:4:3-72
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:4:20-69
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:5:3-79
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:5:20-76
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:6:3-75
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:6:20-72
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:7:3-66
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:7:20-63
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:8:3-64
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:8:20-61
+uses-permission#android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:9:3-93
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:9:20-90
+uses-permission#android.permission.USE_FULL_SCREEN_INTENT
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:10:3-79
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:10:20-76
+application
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:12:3-27:17
+receiver#expo.modules.motoralarms.AlarmReceiver
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:13:5-15:34
+	android:exported
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:15:7-31
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:14:7-60
+receiver#expo.modules.motoralarms.AlarmActionReceiver
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:16:5-18:34
+	android:exported
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:18:7-31
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:17:7-66
+receiver#expo.modules.motoralarms.BootReceiver
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:19:5-26:16
+	android:exported
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:21:7-30
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:20:7-59
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:22:7-25:23
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:23:9-71
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:23:17-68
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:24:9-74
+	android:name
+		ADDED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:24:17-71
+uses-sdk
+INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml
+INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml

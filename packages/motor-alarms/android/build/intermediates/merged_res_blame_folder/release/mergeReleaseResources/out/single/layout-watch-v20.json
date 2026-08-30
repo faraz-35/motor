@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-appcompat-1.7.0-8:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "expo.modules.motoralarms.motor-alarms-release-31:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "expo.modules.motoralarms.motor-alarms-appcompat-1.7.0-8:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    }
+]

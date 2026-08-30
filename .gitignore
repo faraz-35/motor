@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.log
+.DS_Store
+app/android/app/build/
+app/android/build/
+app/android/.gradle/
+app/dist/
+*.orig.*
+motor.keystore
+keystore.env
+Motor-*.apk
