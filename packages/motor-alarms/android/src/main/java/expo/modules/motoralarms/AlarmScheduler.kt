@@ -47,11 +47,16 @@ object AlarmScheduler {
       .build()
     val alarmUri = Uri.parse("android.resource://${ctx.packageName}/raw/motor_alarm")
 
+    // channel settings are immutable once created — recreate ours every time so
+    // fresh attributes (alarm sound, DND bypass) always win over old installs
+    nm.deleteNotificationChannel(CHANNEL_DAILY)
+    nm.deleteNotificationChannel(CHANNEL_STOP)
     nm.createNotificationChannel(
       NotificationChannel(CHANNEL_DAILY, "Motor reminder", NotificationManager.IMPORTANCE_HIGH).apply {
-        description = "Daily reminder that it is someone's motor turn"
+        description = "Daily alarm that it is someone's motor turn"
         setSound(alarmUri, attrs)
         enableVibration(true)
+        setBypassDnd(true)
       }
     )
     nm.createNotificationChannel(
@@ -181,6 +186,18 @@ object AlarmScheduler {
   }
 
   /**
+   * Lands on the app's details page — the most reliable deep link into OEM
+   * permission screens (MIUI "Other permissions" lives one tap from here).
+   */
+  fun openAppDetails(ctx: Context) {
+    ctx.startActivity(
+      Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+        .setData(Uri.parse("package:${ctx.packageName}"))
+        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    )
+  }
+
+  /**
    * Best-effort hop into OEM "autostart / start in background" screens
    * (MIUI on the Redmis, HiOS on the Infinix). Returns false when none of the
    * known components exist and we fell back to plain app details.
@@ -206,11 +223,7 @@ object AlarmScheduler {
         // not installed on this phone, try the next
       }
     }
-    ctx.startActivity(
-      Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-        .setData(Uri.parse("package:${ctx.packageName}"))
-        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    )
+    openAppDetails(ctx)
     return false
   }
 }

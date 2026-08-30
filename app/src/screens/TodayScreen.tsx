@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Alert, Modal, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { C } from '../theme';
+import { Screen } from '../components/Screen';
 import { Btn, Card, Pill, Row, SectionTitle } from '../components/ui';
 import { useApp } from '../state/AppContext';
 import { formatRemaining } from '../logic/alarms';
 import { parseReminderTime } from '../logic/rotation';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export function TodayScreen() {
   const app = useApp();
@@ -42,6 +44,7 @@ export function TodayScreen() {
   const visibleSwaps = pendingSwaps.filter((s) => s.from_member_id !== me?.id);
 
   return (
+    <Screen>
     <ScrollView style={s.screen} contentContainerStyle={s.content}>
       <SectionTitle>Today · {app.today}</SectionTitle>
 
@@ -152,6 +155,7 @@ export function TodayScreen() {
         onSubmit={(to) => run(async () => { await actions.requestSwap(to); setSwapModal(false); })}
       />
     </ScrollView>
+    </Screen>
   );
 }
 
@@ -163,13 +167,14 @@ function SwapModal({
   onSubmit: (toMemberId: string | null) => void;
 }) {
   const { members, me, pendingSwaps, today } = useApp();
+  const insets = useSafeAreaInsets();
   const alreadyRequested = pendingSwaps.some((s) => s.from_member_id === me?.id && s.on_date === today && s.status === 'pending');
   const others = members.filter((m) => m.active && m.id !== me?.id);
 
   return (
     <Modal visible={visible} animationType="slide" transparent onRequestClose={onClose}>
       <View style={s.modalBackdrop}>
-        <View style={s.modalSheet}>
+        <View style={[s.modalSheet, { paddingBottom: 20 + insets.bottom }]}>
           <Text style={s.sheetTitle}>Hand over today's turn</Text>
           {alreadyRequested ? (
             <Text style={s.meta}>

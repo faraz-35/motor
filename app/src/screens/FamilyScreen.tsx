@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import MotorAlarms from '../alarm/native';
 import { C } from '../theme';
+import { Screen } from '../components/Screen';
 import { Btn, Card, Field, Pill, Row, SectionTitle } from '../components/ui';
 import { useApp } from '../state/AppContext';
 
@@ -80,6 +81,7 @@ export function FamilyScreen() {
     );
 
   return (
+    <Screen>
     <ScrollView style={s.screen} contentContainerStyle={s.content}>
       <SectionTitle>Household</SectionTitle>
       <Card>
@@ -140,6 +142,27 @@ export function FamilyScreen() {
             toggle lives in Phone Master or Settings → Apps → Motor → autostart.
           </Text>
         </View>
+        <View style={{ gap: 6 }}>
+          <Text style={s.checkLabel}>
+            5. Alarms that take over the screen (manual on Xiaomi / Infinix)
+          </Text>
+          <Btn title="Open app permissions" kind="ghost" onPress={() => MotorAlarms.openAppDetails()} />
+          <Text style={s.meta}>
+            In the app's permission page, also allow "Display pop-up windows while running in the
+            background" (Redmi) / "Display pop-up windows" (Infinix). Without it the alarm still
+            rings and vibrates, but shows as a banner instead of lighting up the full screen.
+          </Text>
+        </View>
+        <Btn
+          title="Ring a test alarm in 1 minute"
+          onPress={() => {
+            void MotorAlarms.armStopAlarm(Date.now() + 60_000);
+            Alert.alert(
+              'Test armed',
+              'Lock the phone now. In one minute the stop-alarm should light up the screen and ring. If it only appears as a silent banner, do step 5 above.'
+            );
+          }}
+        />
       </Card>
 
       <SectionTitle>Danger zone</SectionTitle>
@@ -147,8 +170,9 @@ export function FamilyScreen() {
         <Btn title="Leave this household" kind="danger" onPress={leave} loading={busy} />
       </Card>
 
-      <Text style={s.version}>Motor v1.0 · household {household?.id?.slice(0, 8) ?? '—'}</Text>
+      <Text style={s.version}>Motor v1.0.1 · household {household?.id?.slice(0, 8) ?? '—'}</Text>
     </ScrollView>
+    </Screen>
   );
 }
 

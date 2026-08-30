@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { C } from '../theme';
+import { Screen } from '../components/Screen';
 import { Btn, Card, Field } from '../components/ui';
 import { useApp } from '../state/AppContext';
 import { createHousehold, joinHousehold } from '../db/api';
@@ -40,7 +41,8 @@ export function OnboardingScreen() {
   };
 
   return (
-    <KeyboardAvoidingView style={s.screen} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+      <Screen>
+      <KeyboardAvoidingView style={s.screen} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <ScrollView contentContainerStyle={s.scroll} keyboardShouldPersistTaps="handled">
         <Text style={s.logo}>Motor</Text>
         <Text style={s.tag}>Household water-motor turns, tracked fairly.</Text>
@@ -68,12 +70,13 @@ export function OnboardingScreen() {
         </Card>
       </ScrollView>
     </KeyboardAvoidingView>
+      </Screen>
   );
 }
 
 const s = StyleSheet.create({
   screen: { flex: 1, backgroundColor: C.bg },
-  scroll: { padding: 20, gap: 16, paddingTop: 80 },
+  scroll: { padding: 20, gap: 16, paddingTop: 48 },
   logo: { color: C.accent, fontSize: 44, fontWeight: '800', letterSpacing: -1 },
   tag: { color: C.dim, fontSize: 16, marginBottom: 16 },
   or: { color: C.dim, fontSize: 14 },

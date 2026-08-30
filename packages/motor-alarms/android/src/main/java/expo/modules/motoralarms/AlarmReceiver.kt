@@ -5,7 +5,6 @@ import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 
@@ -45,12 +44,15 @@ class AlarmReceiver : BroadcastReceiver() {
     NotificationCompat.Builder(context, AlarmScheduler.CHANNEL_DAILY)
       .setSmallIcon(R.drawable.ic_motor_stat)
       .setContentTitle("Motor time")
-      .setContentText("Water motor turn — tap to see whose day it is")
-      .setPriority(NotificationCompat.PRIORITY_HIGH)
-      .setCategory(NotificationCompat.CATEGORY_REMINDER)
+      .setContentText("Water motor turn — open to see whose day it is")
+      .setPriority(NotificationCompat.PRIORITY_MAX)
+      .setCategory(NotificationCompat.CATEGORY_ALARM)
       .setAutoCancel(true)
+      .setVibrate(longArrayOf(0, 400, 200, 400))
       .setContentIntent(launchIntent(context))
+      .setFullScreenIntent(FullScreen.intent(context, "daily"), true)
       .build()
+      .apply { flags = flags or Notification.FLAG_INSISTENT }
 
   private fun stopNotification(context: Context): Notification {
     val snooze = PendingIntent.getBroadcast(
@@ -71,7 +73,7 @@ class AlarmReceiver : BroadcastReceiver() {
       .setVibrate(longArrayOf(0, 400, 200, 400, 200, 400))
       .addAction(0, "Snooze ${AlarmScheduler.snoozeMinutes(context)} min", snooze)
       .setContentIntent(launchIntent(context))
-      .apply { if (Build.VERSION.SDK_INT >= 29) setFullScreenIntent(launchIntent(context), true) }
+      .setFullScreenIntent(FullScreen.intent(context, "stop"), true)
       .build()
     notification.flags = notification.flags or Notification.FLAG_INSISTENT
     return notification

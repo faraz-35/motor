@@ -30,35 +30,50 @@
 14-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:10:20-76
 15
 16    <application>
-16-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:12:3-27:17
-17        <receiver
-17-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:13:5-15:34
-18            android:name="expo.modules.motoralarms.AlarmReceiver"
-18-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:14:7-60
-19            android:exported="false" />
-19-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:15:7-31
-20        <receiver
-20-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:16:5-18:34
-21            android:name="expo.modules.motoralarms.AlarmActionReceiver"
-21-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:17:7-66
-22            android:exported="false" />
-22-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:18:7-31
-23        <receiver
-23-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:19:5-26:16
-24            android:name="expo.modules.motoralarms.BootReceiver"
-24-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:20:7-59
-25            android:exported="true" >
-25-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:21:7-30
-26            <intent-filter>
-26-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:22:7-25:23
-27                <action android:name="android.intent.action.BOOT_COMPLETED" />
-27-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:23:9-71
-27-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:23:17-68
-28                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-28-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:24:9-74
-28-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:24:17-71
-29            </intent-filter>
-30        </receiver>
-31    </application>
-32
-33</manifest>
+16-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:12:3-34:17
+17        <activity
+17-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:13:5-19:72
+18            android:name="expo.modules.motoralarms.FullScreenAlarmActivity"
+18-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:14:7-70
+19            android:excludeFromRecents="true"
+19-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:15:7-40
+20            android:exported="false"
+20-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:16:7-31
+21            android:showWhenLocked="true"
+21-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:17:7-36
+22            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+22-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:19:7-69
+23            android:turnScreenOn="true" />
+23-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:18:7-34
+24
+25        <receiver
+25-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:20:5-22:34
+26            android:name="expo.modules.motoralarms.AlarmReceiver"
+26-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:21:7-60
+27            android:exported="false" />
+27-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:22:7-31
+28        <receiver
+28-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:23:5-25:34
+29            android:name="expo.modules.motoralarms.AlarmActionReceiver"
+29-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:24:7-66
+30            android:exported="false" />
+30-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:25:7-31
+31        <receiver
+31-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:26:5-33:16
+32            android:name="expo.modules.motoralarms.BootReceiver"
+32-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:27:7-59
+33            android:exported="true" >
+33-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:28:7-30
+34            <intent-filter>
+34-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:29:7-32:23
+35                <action android:name="android.intent.action.BOOT_COMPLETED" />
+35-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:30:9-71
+35-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:30:17-68
+36                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+36-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:31:9-74
+36-->/Users/farazshah/Programming/motor/packages/motor-alarms/android/src/main/AndroidManifest.xml:31:17-71
+37            </intent-filter>
+38        </receiver>
+39    </application>
+40
+41</manifest>

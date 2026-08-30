@@ -10,6 +10,13 @@
   <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
   <application>
+    <activity
+      android:name="expo.modules.motoralarms.FullScreenAlarmActivity"
+      android:excludeFromRecents="true"
+      android:exported="false"
+      android:showWhenLocked="true"
+      android:turnScreenOn="true"
+      android:theme="@android:style/Theme.DeviceDefault.NoActionBar" />
     <receiver
       android:name="expo.modules.motoralarms.AlarmReceiver"
       android:exported="false" />

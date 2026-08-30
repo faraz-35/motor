@@ -53,6 +53,10 @@ class MotorAlarmsModule : Module() {
       ctx?.let { AlarmScheduler.openAutostart(it) } ?: false
     }
 
+    Function("openAppDetails") {
+      ctx?.let { AlarmScheduler.openAppDetails(it) }
+    }
+
     AsyncFunction("requestIgnoreBatteryOptimizations") {
       ctx?.let { AlarmScheduler.requestIgnoreBatteryOptimizations(it) }
     }

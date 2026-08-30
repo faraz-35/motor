@@ -12,6 +12,7 @@ type MotorAlarmsNative = {
   exactAlarmsEnabled(): boolean;
   notificationsEnabled(): boolean;
   openAutostartSettings(): boolean;
+  openAppDetails(): void;
   openExactAlarmSettings(): Promise<void>;
   openNotificationSettings(): Promise<void>;
 };

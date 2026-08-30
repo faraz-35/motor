@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { C } from '../theme';
+import { Screen } from '../components/Screen';
 import { Card, Pill, Row, SectionTitle } from '../components/ui';
 import { useApp } from '../state/AppContext';
 import { addDays, dayNumber, effectiveAssign } from '../logic/rotation';
@@ -30,6 +31,7 @@ export function HistoryScreen() {
   }
 
   return (
+    <Screen>
     <ScrollView style={s.screen} contentContainerStyle={s.content}>
       <SectionTitle>Last 4 weeks</SectionTitle>
       {weekRows.map(({ week, days: chunk }) => (
@@ -65,6 +67,7 @@ export function HistoryScreen() {
         {' '}{members.filter((m) => m.active).length ? `day ${dayNumber(today) % Math.max(members.filter((m) => m.active).length, 1) + 1} of the cycle` : 'no members'}).
       </Text>
     </ScrollView>
+    </Screen>
   );
 }
 
